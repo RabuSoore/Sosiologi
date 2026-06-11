@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisi-Kisi ASAT Sosiologi Kelas X</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+  :root {
+    --bg: #0D1117;
+    --surface: #161B22;
+    --card: #1C2333;
+    --border: #30363D;
+    --accent1: #58A6FF;
+    --accent2: #3FB950;
+    --accent3: #F78166;
+    --accent4: #D2A8FF;
+    --accent5: #FFA657;
+    --accent6: #39D353;
+    --text: #E6EDF3;
+    --muted: #8B949E;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent1);
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+  .nav-dots {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-dot:hover { border-color: var(--accent1); color: var(--accent1); }
+  .nav-dot.active { background: var(--accent1); border-color: var(--accent1); color: #000; }
+
+  /* PAGES */
+  .page {
+    display: none;
+    min-height: 100vh;
+    padding: 90px 20px 60px;
+    max-width: 820px;
+    margin: 0 auto;
+    animation: fadeIn 0.35s ease;
+  }
+  .page.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* HOME PAGE */
+  .home-hero {
+    text-align: center;
+    padding: 40px 0 30px;
+  }
+  .home-badge {
+    display: inline-block;
+    background: rgba(88,166,255,0.12);
+    border: 1px solid rgba(88,166,255,0.3);
+    color: var(--accent1);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+  .home-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 6vw, 46px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #E6EDF3 0%, #58A6FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .home-sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .grid-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .topic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+  .topic-card:hover {
+    border-color: var(--accent1);
+    background: rgba(88,166,255,0.05);
+    transform: translateY(-2px);
+  }
+  .topic-num {
+    min-width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .topic-text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .topic-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* TOPIC PAGE */
+  .page-header {
+    margin-bottom: 28px;
+  }
+  .page-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .page-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .page-desc {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* CARDS */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 28px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .def-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+  }
+  .def-term {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .def-body {
+    font-size: 13px;
+    color: #C9D1D9;
+    line-height: 1.65;
+  }
+  .highlight {
+    display: inline;
+    background: rgba(88,166,255,0.15);
+    color: var(--accent1);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  /* PILL TAGS */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .tag {
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .compare-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .compare-table td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    color: #C9D1D9;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .compare-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  /* FLOW STEPS */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 10px;
+  }
+  .flow-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .flow-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .flow-circle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .flow-connector {
+    width: 2px;
+    flex: 1;
+    min-height: 20px;
+    background: var(--border);
+    margin: 4px 0;
+  }
+  .flow-content {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    flex: 1;
+  }
+  .flow-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .flow-text {
+    font-size: 13px;
+    color: #C9D1D9;
+    line-height: 1.6;
+  }
+
+  /* QUIZ CARD */
+  .quiz-box {
+    background: rgba(88,166,255,0.06);
+    border: 1px solid rgba(88,166,255,0.25);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 28px;
+  }
+  .quiz-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent1);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .quiz-q {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .quiz-opt {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  .quiz-opt:hover { border-color: var(--accent1); color: var(--accent1); }
+  .quiz-opt.correct { border-color: var(--accent2); background: rgba(63,185,80,0.1); color: var(--accent2); }
+  .quiz-opt.wrong { border-color: var(--accent3); background: rgba(247,129,102,0.1); color: var(--accent3); }
+  .quiz-feedback {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    display: none;
+    color: #C9D1D9;
+  }
+  .quiz-next {
+    margin-top: 12px;
+    display: none;
+    background: var(--accent1);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* NAV BUTTONS */
+  .page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    gap: 12px;
+  }
+  .btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    transition: all 0.2s;
+  }
+  .btn:hover { border-color: var(--accent1); color: var(--accent1); }
+  .btn-primary {
+    background: var(--accent1);
+    border-color: var(--accent1);
+    color: #000;
+  }
+  .btn-primary:hover { opacity: 0.85; color: #000; }
+  .btn-home {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+  }
+
+  /* COLORS PER TOPIC */
+  .c1 { color: #58A6FF; } .bg1 { background: rgba(88,166,255,0.15); }
+  .c2 { color: #3FB950; } .bg2 { background: rgba(63,185,80,0.15); }
+  .c3 { color: #F78166; } .bg3 { background: rgba(247,129,102,0.15); }
+  .c4 { color: #D2A8FF; } .bg4 { background: rgba(210,168,255,0.15); }
+  .c5 { color: #FFA657; } .bg5 { background: rgba(255,166,87,0.15); }
+  .c6 { color: #39D353; } .bg6 { background: rgba(57,211,83,0.15); }
+  .c7 { color: #FF7B72; } .bg7 { background: rgba(255,123,114,0.15); }
+  .c8 { color: #79C0FF; } .bg8 { background: rgba(121,192,255,0.15); }
+  .c9 { color: #E3B341; } .bg9 { background: rgba(227,179,65,0.15); }
+  .c10 { color: #56D364; } .bg10 { background: rgba(86,211,100,0.15); }
+  .c11 { color: #BC8CFF; } .bg11 { background: rgba(188,140,255,0.15); }
+  .c12 { color: #FF9A72; } .bg12 { background: rgba(255,154,114,0.15); }
+
+  .key-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #C9D1D9;
+  }
+  .key-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+
+  ul.dot-list { padding-left: 18px; }
+  ul.dot-list li { font-size: 13px; color: #C9D1D9; line-height: 1.7; margin-bottom: 3px; }
+
+  .pill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .pill-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .pill-item-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .pill-item-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  .mnemonic {
+    background: rgba(210,168,255,0.08);
+    border: 1px solid rgba(210,168,255,0.25);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 8px;
+  }
+  .mnemonic-title { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--accent4); margin-bottom: 8px; text-transform: uppercase; }
+  .mnemonic-text { font-size: 13px; line-height: 1.7; color: #C9D1D9; }
+  .mnemonic-key { font-size: 18px; font-weight: 800; color: var(--accent4); letter-spacing: 2px; display: block; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <span class="nav-title">📚 Sosiologi X</span>
+  <div class="nav-dots">
+    <button class="nav-dot active" onclick="goTo(0)">🏠</button>
+    <button class="nav-dot" onclick="goTo(1)">1</button>
+    <button class="nav-dot" onclick="goTo(2)">2</button>
+    <button class="nav-dot" onclick="goTo(3)">3</button>
+    <button class="nav-dot" onclick="goTo(4)">4</button>
+    <button class="nav-dot" onclick="goTo(5)">5</button>
+    <button class="nav-dot" onclick="goTo(6)">6</button>
+    <button class="nav-dot" onclick="goTo(7)">7</button>
+    <button class="nav-dot" onclick="goTo(8)">8</button>
+    <button class="nav-dot" onclick="goTo(9)">9</button>
+    <button class="nav-dot" onclick="goTo(10)">10</button>
+    <button class="nav-dot" onclick="goTo(11)">11</button>
+    <button class="nav-dot" onclick="goTo(12)">12</button>
+  </div>
+</nav>
+
+<!-- PAGE 0: HOME -->
+<div class="page active" id="page-0">
+  <div class="home-hero">
+    <div class="home-badge">ASAT · Sosiologi · Kelas X</div>
+    <h1 class="home-title">Kisi-Kisi ASAT<br>Sosiologi Kelas X</h1>
+    <p class="home-sub">12 topik · Pilih materi untuk mulai belajar</p>
+  </div>
+
+  <div class="grid-topics">
+    <div class="topic-card" onclick="goTo(1)">
+      <div class="topic-num bg1 c1">1</div>
+      <div><div class="topic-text">Definisi Konsep</div><div class="topic-sub">Struktur, Stratifikasi & Diferensiasi</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(2)">
+      <div class="topic-num bg2 c2">2</div>
+      <div><div class="topic-text">Proses Terbentuknya Stratifikasi</div><div class="topic-sub">Bagaimana lapisan sosial terbentuk</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(3)">
+      <div class="topic-num bg3 c3">3</div>
+      <div><div class="topic-text">Tipe Stratifikasi Sosial</div><div class="topic-sub">Open, Closed, Mixed</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(4)">
+      <div class="topic-num bg4 c4">4</div>
+      <div><div class="topic-text">Sifat Stratifikasi Sosial</div><div class="topic-sub">Terbuka, Tertutup, Campuran</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(5)">
+      <div class="topic-num bg5 c5">5</div>
+      <div><div class="topic-text">Ciri Pembeda Diferensiasi</div><div class="topic-sub">Ras, Etnis, Gender, Agama, dll</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(6)">
+      <div class="topic-num bg6 c6">6</div>
+      <div><div class="topic-text">Dampak Stratifikasi & Diferensiasi</div><div class="topic-sub">Positif dan negatif</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(7)">
+      <div class="topic-num bg7 c7">7</div>
+      <div><div class="topic-text">Cara Memperoleh Status Sosial</div><div class="topic-sub">Ascribed, Achieved, Assigned</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(8)">
+      <div class="topic-num bg8 c8">8</div>
+      <div><div class="topic-text">Mobilitas Sosial</div><div class="topic-sub">Jenis, faktor, saluran mobilitas</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(9)">
+      <div class="topic-num bg9 c9">9</div>
+      <div><div class="topic-text">Definisi Ragam Gejala Sosial</div><div class="topic-sub">Pengertian & karakteristik</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(10)">
+      <div class="topic-num bg10 c10">10</div>
+      <div><div class="topic-text">Ragam Gejala Sosial</div><div class="topic-sub">Kemiskinan, kejahatan, konflik, dll</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(11)">
+      <div class="topic-num bg11 c11">11</div>
+      <div><div class="topic-text">Fungsi Lembaga Keluarga</div><div class="topic-sub">Sosialisasi, reproduksi, ekonomi</div></div>
+    </div>
+    <div class="topic-card" onclick="goTo(12)">
+      <div class="topic-num bg12 c12">12</div>
+      <div><div class="topic-text">Upaya Mengatasi Gejala Sosial</div><div class="topic-sub">Preventif, represif, kuratif</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 1: DEFINISI -->
+<div class="page" id="page-1">
+  <div class="page-header">
+    <div class="page-num c1">Materi 01</div>
+    <h2 class="page-title">Definisi: Struktur Sosial, Stratifikasi & Diferensiasi Sosial</h2>
+    <p class="page-desc">Tiga konsep dasar yang wajib dikuasai sebelum mempelajari topik lainnya.</p>
+  </div>
+
+  <div class="section-label">Definisi Utama</div>
+
+  <div class="def-card">
+    <div class="def-term c1">🏗️ Struktur Sosial</div>
+    <div class="def-body">
+      <span class="highlight">Tatanan/susunan</span> dari hubungan-hubungan sosial dalam masyarakat yang mencakup <strong>status, peran, kelompok, dan lembaga sosial</strong>. Struktur sosial ibarat "kerangka" yang menentukan posisi dan peran setiap individu dalam masyarakat.<br><br>
+      <strong>Unsur-unsur:</strong> Status sosial, Peran sosial, Kelompok sosial, Lembaga sosial.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c2">📊 Stratifikasi Sosial</div>
+    <div class="def-body">
+      <span class="highlight">Pelapisan/penggolongan</span> masyarakat ke dalam lapisan-lapisan (strata) berdasarkan <strong>kekayaan, kekuasaan, atau prestise</strong>. Bersifat <strong>vertikal</strong> (ada yang atas dan bawah).<br><br>
+      <strong>Dasar pelapisan:</strong> Kekayaan (wealth), Kekuasaan (power), Kehormatan/prestise (prestige), Ilmu pengetahuan.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">🌈 Diferensiasi Sosial</div>
+    <div class="def-body">
+      <span class="highlight">Penggolongan/pembedaan</span> masyarakat berdasarkan ciri-ciri tertentu yang bersifat <strong>horizontal</strong> (setara, tidak ada yang lebih tinggi/rendah). Tidak ada hierarki nilai.<br><br>
+      <strong>Dasar diferensiasi:</strong> Ras, Etnis, Agama, Gender, Profesi.
+    </div>
+  </div>
+
+  <div class="section-label">Perbedaan Kunci</div>
+
+  <table class="compare-table">
+    <thead>
+      <tr style="background: var(--surface);">
+        <th style="color: var(--muted);">Aspek</th>
+        <th class="c2">Stratifikasi</th>
+        <th class="c5">Diferensiasi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Arah</strong></td>
+        <td>Vertikal (atas-bawah)</td>
+        <td>Horizontal (sejajar)</td>
+      </tr>
+      <tr>
+        <td><strong>Hierarki</strong></td>
+        <td>Ada (tinggi-rendah)</td>
+        <td>Tidak ada</td>
+      </tr>
+      <tr>
+        <td><strong>Dasar</strong></td>
+        <td>Kekayaan, kekuasaan, prestise</td>
+        <td>Ras, etnis, agama, gender</td>
+      </tr>
+      <tr>
+        <td><strong>Contoh</strong></td>
+        <td>Kelas atas, menengah, bawah</td>
+        <td>Islam, Kristen, Hindu = setara</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Cara Mudah Ingat</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">STRA = STRATA = VERTIKAL</span>
+      Stratifikasi → Strata → Ada tingkatan (seperti lantai gedung)<br>
+      <strong>Diferensiasi → Beda tapi setara</strong> (seperti warna-warna yang berbeda namun tidak ada yang lebih baik)
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz1">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Penggolongan masyarakat berdasarkan agama (Islam, Kristen, Hindu) termasuk dalam...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz1')">A. Stratifikasi sosial</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz1')">B. Diferensiasi sosial</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz1')">C. Struktur sosial</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz1')">D. Mobilitas sosial</button>
+    </div>
+    <div class="quiz-feedback" id="quiz1-fb">✅ Benar! Penggolongan berdasarkan agama bersifat <strong>horizontal</strong> — tidak ada agama yang lebih tinggi dari agama lain, sehingga ini adalah diferensiasi sosial.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn btn-home" onclick="goTo(0)">🏠 Home</button>
+    <button class="btn btn-primary" onclick="goTo(2)">Materi 2 →</button>
+  </div>
+</div>
+
+<!-- PAGE 2: PROSES STRATIFIKASI -->
+<div class="page" id="page-2">
+  <div class="page-header">
+    <div class="page-num c2">Materi 02</div>
+    <h2 class="page-title">Proses Terbentuknya Stratifikasi Sosial</h2>
+    <p class="page-desc">Bagaimana lapisan-lapisan sosial terbentuk dalam masyarakat.</p>
+  </div>
+
+  <div class="section-label">Dua Cara Terbentuk</div>
+
+  <div class="def-card">
+    <div class="def-term c2">🔄 1. Terjadi Secara Tidak Sengaja (Alamiah)</div>
+    <div class="def-body">
+      Stratifikasi terbentuk dengan sendirinya, tanpa direncanakan. Muncul karena perbedaan <strong>kepandaian, usia, fisik, harta benda</strong>, dan jasa seseorang dalam masyarakat.<br><br>
+      <strong>Contoh:</strong> Orang yang lebih tua dihormati, orang kaya memiliki pengaruh lebih, orang pandai mendapat posisi penting.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">📋 2. Terjadi Secara Sengaja (Terencana)</div>
+    <div class="def-body">
+      Stratifikasi dibentuk dengan sengaja untuk tujuan tertentu, biasanya <strong>pembagian kekuasaan dan wewenang</strong> dalam organisasi atau negara.<br><br>
+      <strong>Contoh:</strong> Struktur TNI (Jenderal > Kolonel > Mayor > dst), jabatan dalam perusahaan (Direktur > Manager > Staf).
+    </div>
+  </div>
+
+  <div class="section-label">Faktor Penyebab</div>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="flow-line">
+        <div class="flow-circle bg2 c2">💰</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">Perbedaan Ekonomi / Kekayaan</div>
+        <div class="flow-text">Akumulasi harta benda menciptakan kelas kaya dan miskin. Orang kaya dapat mengakses pendidikan, kesehatan, dan peluang lebih baik.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line">
+        <div class="flow-circle bg5 c5">⚡</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">Kekuasaan (Power)</div>
+        <div class="flow-text">Kemampuan mempengaruhi dan mengendalikan orang lain. Penguasa politik, pemimpin militer, dan tokoh berpengaruh berada di lapisan atas.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line">
+        <div class="flow-circle bg3 c3">🏆</div>
+        <div class="flow-connector"></div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">Kehormatan / Prestise</div>
+        <div class="flow-text">Penghargaan sosial yang diberikan masyarakat. Tokoh agama, cendekiawan, atau pahlawan bisa memiliki prestise tinggi meski tidak kaya.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line">
+        <div class="flow-circle bg4 c4">🎓</div>
+      </div>
+      <div class="flow-content">
+        <div class="flow-title">Ilmu Pengetahuan / Pendidikan</div>
+        <div class="flow-text">Di era modern, tingkat pendidikan menjadi dasar pelapisan. Dokter, insinyur, dan akademisi menempati strata yang lebih tinggi.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Mnemonik: KKP-I</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">K · K · P · I</span>
+      <strong>K</strong>ekayaan · <strong>K</strong>ekuasaan · <strong>P</strong>restise · <strong>I</strong>lmu Pengetahuan<br>
+      Ingat: "<em>Kakek Punya Ilmu</em>" → KKP-I
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz2">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Seorang kiai yang sangat dihormati masyarakat namun hidupnya sederhana berada di lapisan atas berdasarkan...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz2')">A. Kekayaan</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz2')">B. Kekuasaan</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz2')">C. Kehormatan / Prestise</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz2')">D. Ilmu pengetahuan formal</button>
+    </div>
+    <div class="quiz-feedback" id="quiz2-fb">✅ Benar! Kiai dihormati bukan karena kekayaan/kekuasaan formal, melainkan karena <strong>prestise/kehormatan</strong> yang diberikan masyarakat atas keilmuan dan akhlaknya.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(1)">← Materi 1</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(3)">Materi 3 →</button>
+  </div>
+</div>
+
+<!-- PAGE 3: TIPE STRATIFIKASI -->
+<div class="page" id="page-3">
+  <div class="page-header">
+    <div class="page-num c3">Materi 03</div>
+    <h2 class="page-title">Tipe Stratifikasi Sosial</h2>
+    <p class="page-desc">Sistem pelapisan sosial dibedakan berdasarkan kemungkinan berpindah antar lapisan.</p>
+  </div>
+
+  <div class="section-label">3 Tipe Utama</div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#FF7B72;">🔓 Stratifikasi Terbuka (Open Stratification)</div>
+    <div class="def-body">
+      Sistem pelapisan yang <span class="highlight" style="background:rgba(255,123,114,0.15);color:#FF7B72;">memungkinkan</span> setiap anggota berpindah dari satu lapisan ke lapisan lain, baik ke atas (naik) maupun ke bawah (turun).<br><br>
+      <strong>Ciri:</strong> Ada kesempatan sama, kerja keras dihargai, mobilitas sosial tinggi.<br>
+      <strong>Contoh:</strong> Masyarakat modern/industri. Anak petani bisa jadi presiden.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#D2A8FF;">🔒 Stratifikasi Tertutup (Closed Stratification)</div>
+    <div class="def-body">
+      Sistem pelapisan yang <span class="highlight" style="background:rgba(210,168,255,0.15);color:#D2A8FF;">tidak memungkinkan</span> perpindahan antar lapisan. Seseorang lahir dalam lapisan tertentu dan akan tetap di sana seumur hidup.<br><br>
+      <strong>Ciri:</strong> Kasta, keturunan, ras menentukan posisi sosial.<br>
+      <strong>Contoh:</strong> Sistem kasta di India (Brahmana, Ksatria, Waisya, Sudra), apartheid Afrika Selatan.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#FFA657;">⚖️ Stratifikasi Campuran (Mixed Stratification)</div>
+    <div class="def-body">
+      Gabungan antara stratifikasi terbuka dan tertutup. Dalam bidang tertentu bersifat tertutup, tetapi dalam bidang lain bersifat terbuka.<br><br>
+      <strong>Contoh:</strong> Di Bali, seorang Sudra tidak dapat menjadi pemimpin adat (tertutup), namun bisa menjadi pengusaha kaya atau pejabat pemerintah (terbuka).
+    </div>
+  </div>
+
+  <div class="section-label">Perbandingan Tipe</div>
+  <table class="compare-table">
+    <thead>
+      <tr style="background:var(--surface);">
+        <th style="color:var(--muted);">Aspek</th>
+        <th style="color:#FF7B72;">Terbuka</th>
+        <th style="color:#D2A8FF;">Tertutup</th>
+        <th style="color:#FFA657;">Campuran</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Mobilitas</strong></td>
+        <td>Tinggi</td>
+        <td>Tidak ada</td>
+        <td>Sebagian</td>
+      </tr>
+      <tr>
+        <td><strong>Dasar</strong></td>
+        <td>Prestasi</td>
+        <td>Kelahiran/keturunan</td>
+        <td>Keduanya</td>
+      </tr>
+      <tr>
+        <td><strong>Contoh</strong></td>
+        <td>Masyarakat modern</td>
+        <td>Kasta India</td>
+        <td>Masyarakat Bali</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Cara Mudah Ingat</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">TERBUKA = BISA NAIK</span>
+      Bayangkan tangga: <strong>Terbuka</strong> → tangga bisa dinaiki siapa saja<br>
+      <strong>Tertutup</strong> → pintu terkunci, hanya orang tertentu yang bisa masuk<br>
+      <strong>Campuran</strong> → sebagian pintu terbuka, sebagian terkunci
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz3">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Sistem kasta di India di mana seseorang tidak bisa berpindah kasta disebut...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz3')">A. Stratifikasi terbuka</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz3')">B. Stratifikasi tertutup</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz3')">C. Stratifikasi campuran</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz3')">D. Diferensiasi sosial</button>
+    </div>
+    <div class="quiz-feedback" id="quiz3-fb">✅ Benar! Sistem kasta India adalah contoh klasik <strong>stratifikasi tertutup</strong> — posisi sosial ditentukan sejak lahir dan tidak bisa diubah.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(2)">← Materi 2</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(4)">Materi 4 →</button>
+  </div>
+</div>
+
+<!-- PAGE 4: SIFAT STRATIFIKASI -->
+<div class="page" id="page-4">
+  <div class="page-header">
+    <div class="page-num c4">Materi 04</div>
+    <h2 class="page-title">Sifat Stratifikasi Sosial</h2>
+    <p class="page-desc">Karakteristik dan unsur-unsur yang membentuk sistem lapisan sosial.</p>
+  </div>
+
+  <div class="section-label">Sifat-Sifat Stratifikasi</div>
+
+  <div class="pill-grid">
+    <div class="pill-item">
+      <div class="pill-item-title c4">🌍 Universal</div>
+      <div class="pill-item-desc">Ada di setiap masyarakat, kapan pun dan di mana pun selama ada manusia hidup berkelompok.</div>
+    </div>
+    <div class="pill-item">
+      <div class="pill-item-title c4">🔄 Bisa Berubah</div>
+      <div class="pill-item-desc">Sistem dan bentuk stratifikasi dapat berubah seiring waktu dan perkembangan masyarakat.</div>
+    </div>
+    <div class="pill-item">
+      <div class="pill-item-title c4">📦 Beragam</div>
+      <div class="pill-item-desc">Bentuk dan dasar stratifikasi berbeda-beda di setiap masyarakat sesuai nilai yang berlaku.</div>
+    </div>
+    <div class="pill-item">
+      <div class="pill-item-title c4">🔗 Konsekuensi</div>
+      <div class="pill-item-desc">Memiliki dampak pada hak, kewajiban, fasilitas, dan peluang yang diperoleh seseorang.</div>
+    </div>
+  </div>
+
+  <div class="section-label">Unsur-Unsur Stratifikasi Sosial</div>
+
+  <div class="def-card">
+    <div class="def-term c4">📍 Status Sosial</div>
+    <div class="def-body">
+      Kedudukan seseorang dalam masyarakat. Ada 3 cara memperoleh:
+      <ul class="dot-list" style="margin-top:8px;">
+        <li><strong>Ascribed status</strong> – didapat dari kelahiran (keturunan bangsawan)</li>
+        <li><strong>Achieved status</strong> – diraih lewat usaha (dokter, pengacara)</li>
+        <li><strong>Assigned status</strong> – diberikan masyarakat (pahlawan nasional)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c4">🎭 Peran Sosial (Role)</div>
+    <div class="def-body">
+      Perilaku yang diharapkan dari seseorang berdasarkan statusnya. Status adalah posisi, peran adalah tindakan yang dijalankan.<br><br>
+      <strong>Contoh:</strong> Status = guru → Peran = mengajar, mendidik, memberi contoh.
+    </div>
+  </div>
+
+  <div class="key-box" style="border-color: var(--accent4);">
+    <div class="key-title c4">⚠️ Perbedaan Status dan Peran</div>
+    Status adalah "siapa kamu" dalam masyarakat.<br>
+    Peran adalah "apa yang kamu lakukan" sesuai status.<br>
+    Satu orang bisa memiliki banyak status sekaligus → disebut <strong>status set</strong>.<br>
+    (Contoh: seseorang bisa sekaligus menjadi ibu, guru, dan ketua RT)
+  </div>
+
+  <div class="section-label">Dimensi Stratifikasi (Max Weber)</div>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg4 c4">💰</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">Class (Kelas Ekonomi)</div>
+        <div class="flow-text">Berdasarkan kekayaan dan posisi ekonomi. Kelas atas, menengah, bawah.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg4 c4">⚡</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">Power (Kekuasaan)</div>
+        <div class="flow-text">Kemampuan memaksakan kehendak atas orang lain. Berkaitan dengan kekuasaan politik.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg4 c4">🏆</div></div>
+      <div class="flow-content">
+        <div class="flow-title">Status (Prestise Sosial)</div>
+        <div class="flow-text">Penghargaan dan kehormatan yang diberikan masyarakat kepada seseorang.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz4">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Seorang anak yang lahir dari keluarga bangsawan otomatis memiliki kedudukan tinggi. Status ini disebut...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'quiz4')">A. Ascribed status</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz4')">B. Achieved status</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz4')">C. Assigned status</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz4')">D. Status set</button>
+    </div>
+    <div class="quiz-feedback" id="quiz4-fb">✅ Benar! <strong>Ascribed status</strong> adalah kedudukan yang diperoleh secara otomatis sejak lahir, seperti keturunan bangsawan atau keluarga kerajaan.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(3)">← Materi 3</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(5)">Materi 5 →</button>
+  </div>
+</div>
+
+<!-- PAGE 5: CIRI PEMBEDA DIFERENSIASI -->
+<div class="page" id="page-5">
+  <div class="page-header">
+    <div class="page-num c5">Materi 05</div>
+    <h2 class="page-title">Ciri Pembeda Diferensiasi Sosial</h2>
+    <p class="page-desc">Dasar-dasar pengelompokan masyarakat yang bersifat horizontal (setara).</p>
+  </div>
+
+  <div class="section-label">6 Ciri Pembeda Utama</div>
+
+  <div class="def-card">
+    <div class="def-term c5">👥 1. Ras</div>
+    <div class="def-body">
+      Pengelompokan berdasarkan <strong>ciri-ciri fisik biologis</strong> yang diturunkan, seperti warna kulit, bentuk rambut, bentuk mata.<br>
+      <strong>Contoh:</strong> Mongoloid, Kaukasoid, Negroid, Australoid.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">🌍 2. Etnis (Suku Bangsa)</div>
+    <div class="def-body">
+      Pengelompokan berdasarkan <strong>asal-usul, budaya, bahasa, dan tradisi</strong> yang sama.<br>
+      <strong>Contoh:</strong> Suku Jawa, Batak, Sunda, Bugis, Dayak, Minangkabau.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">🕌 3. Agama</div>
+    <div class="def-body">
+      Pengelompokan berdasarkan <strong>kepercayaan/keyakinan</strong> yang dianut. Setiap agama dianggap setara.<br>
+      <strong>Contoh:</strong> Islam, Kristen Protestan, Katolik, Hindu, Buddha, Konghucu.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">⚤ 4. Gender (Jenis Kelamin)</div>
+    <div class="def-body">
+      Pengelompokan berdasarkan <strong>perbedaan biologis</strong> (laki-laki/perempuan). Secara sosial, keduanya setara dalam hak dan martabat.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">💼 5. Profesi / Pekerjaan</div>
+    <div class="def-body">
+      Pengelompokan berdasarkan <strong>jenis pekerjaan</strong>. Dokter, petani, pedagang, guru adalah berbeda tapi setara nilainya.<br>
+      <strong>Catatan:</strong> Ketika profesi dikaitkan dengan penghasilan → bisa menjadi stratifikasi.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term c5">🏘️ 6. Klan (Marga/Keluarga)</div>
+    <div class="def-body">
+      Pengelompokan berdasarkan <strong>garis keturunan</strong> yang sama (patrilineal/matrilineal).<br>
+      <strong>Contoh:</strong> Marga Sinaga, Siregar, Nasution (Batak Toba).
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Mnemonik: REAGA-P-K</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">R · E · A · G · P · K</span>
+      <strong>R</strong>as · <strong>E</strong>tnis · <strong>A</strong>gama · <strong>G</strong>ender · <strong>P</strong>rofesi · <strong>K</strong>lan<br>
+      Ingat: "<em>REA Gapunya Pikiran Keras</em>"
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz5">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Masyarakat Batak memiliki sistem marga seperti Sinaga, Manullang, Siregar. Ini merupakan diferensiasi berdasarkan...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz5')">A. Ras</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz5')">B. Etnis</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz5')">C. Agama</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz5')">D. Klan</button>
+    </div>
+    <div class="quiz-feedback" id="quiz5-fb">✅ Benar! Marga di masyarakat Batak adalah contoh <strong>diferensiasi berdasarkan klan</strong> — pengelompokan berdasarkan garis keturunan yang sama.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(4)">← Materi 4</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(6)">Materi 6 →</button>
+  </div>
+</div>
+
+<!-- PAGE 6: DAMPAK -->
+<div class="page" id="page-6">
+  <div class="page-header">
+    <div class="page-num c6">Materi 06</div>
+    <h2 class="page-title">Dampak Stratifikasi & Diferensiasi Sosial</h2>
+    <p class="page-desc">Konsekuensi positif dan negatif dari adanya pelapisan dan penggolongan sosial.</p>
+  </div>
+
+  <div class="section-label">✅ Dampak Positif</div>
+  <div class="key-box" style="border-color:#3FB950;">
+    <ul class="dot-list">
+      <li><strong>Mendorong individu untuk berprestasi</strong> – adanya lapisan atas memotivasi orang untuk berusaha lebih keras.</li>
+      <li><strong>Pembagian kerja yang jelas</strong> – setiap lapisan memiliki fungsi dan tugas masing-masing.</li>
+      <li><strong>Memperkuat identitas budaya</strong> – diferensiasi etnis dan budaya memperkaya keragaman.</li>
+      <li><strong>Meningkatkan solidaritas kelompok</strong> – anggota kelompok yang sama saling mendukung.</li>
+      <li><strong>Mendorong spesialisasi</strong> – perbedaan profesi menciptakan ahli di berbagai bidang.</li>
+    </ul>
+  </div>
+
+  <div class="section-label">❌ Dampak Negatif</div>
+  <div class="key-box" style="border-color:#F78166;">
+    <ul class="dot-list">
+      <li><strong>Kesenjangan sosial</strong> – jurang antara si kaya dan si miskin semakin lebar.</li>
+      <li><strong>Diskriminasi</strong> – perlakuan tidak adil berdasarkan status, ras, atau agama.</li>
+      <li><strong>Prasangka (prejudice)</strong> – penilaian negatif tanpa dasar kepada kelompok lain.</li>
+      <li><strong>Konflik sosial</strong> – persaingan dan ketegangan antar lapisan atau kelompok.</li>
+      <li><strong>Primordialisme</strong> – terlalu mengutamakan kelompok sendiri secara berlebihan.</li>
+      <li><strong>Etnosentrisme</strong> – menganggap budaya/kelompok sendiri lebih baik dari yang lain.</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Dampak Khusus Diferensiasi</div>
+
+  <table class="compare-table">
+    <thead>
+      <tr style="background:var(--surface);">
+        <th style="color:var(--muted);">Fenomena</th>
+        <th style="color:var(--muted);">Pengertian</th>
+        <th style="color:var(--muted);">Contoh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:#FFA657;">Primordialisme</strong></td>
+        <td>Loyalitas berlebihan pada kelompok asal</td>
+        <td>Hanya memilih pejabat dari suku sendiri</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#F78166;">Etnosentrisme</strong></td>
+        <td>Menganggap budayanya paling baik</td>
+        <td>Meremehkan adat istiadat suku lain</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#D2A8FF;">Sektarianisme</strong></td>
+        <td>Fanatisme agama yang sempit</td>
+        <td>Menolak bergaul dengan berbeda agama</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#58A6FF;">Interseksi Sosial</strong></td>
+        <td>Persilangan berbagai kelompok (positif)</td>
+        <td>Berbeda suku tapi satu agama → integrasi</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#3FB950;">Konsolidasi</strong></td>
+        <td>Penguatan karena banyak kesamaan</td>
+        <td>Satu suku + satu agama = solidaritas kuat</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quiz-box" id="quiz6">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Menganggap budaya sendiri lebih unggul dari budaya lain disebut...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz6')">A. Primordialisme</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz6')">B. Etnosentrisme</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz6')">C. Sektarianisme</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz6')">D. Interseksi sosial</button>
+    </div>
+    <div class="quiz-feedback" id="quiz6-fb">✅ Benar! <strong>Etnosentrisme</strong> adalah sikap menilai budaya lain berdasarkan standar budaya sendiri, dan menganggap budaya sendiri lebih baik.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(5)">← Materi 5</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(7)">Materi 7 →</button>
+  </div>
+</div>
+
+<!-- PAGE 7: CARA MEMPEROLEH STATUS -->
+<div class="page" id="page-7">
+  <div class="page-header">
+    <div class="page-num c7">Materi 07</div>
+    <h2 class="page-title">Cara Memperoleh Status Sosial</h2>
+    <p class="page-desc">Tiga cara seseorang mendapatkan kedudukan dalam masyarakat.</p>
+  </div>
+
+  <div class="section-label">3 Cara Memperoleh Status</div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#FF7B72;">👶 1. Ascribed Status (Status yang Diberikan/Diwariskan)</div>
+    <div class="def-body">
+      Status yang diperoleh seseorang <span class="highlight" style="background:rgba(255,123,114,0.15);color:#FF7B72;">tanpa usaha sendiri</span>, secara otomatis sejak lahir berdasarkan faktor keturunan atau kelahiran.<br><br>
+      <strong>Contoh:</strong>
+      <ul class="dot-list" style="margin-top:6px;">
+        <li>Seorang anak raja otomatis menjadi pangeran/putri</li>
+        <li>Kasta yang diwarisi dari orang tua di India</li>
+        <li>Gelar bangsawan (Raden, Andi, Tengku) yang diwarisi</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#3FB950;">💪 2. Achieved Status (Status yang Diperjuangkan)</div>
+    <div class="def-body">
+      Status yang diperoleh seseorang melalui <span class="highlight" style="background:rgba(63,185,80,0.15);color:#3FB950;">usaha, kerja keras, dan prestasi</span> sendiri. Siapa pun bisa meraihnya.<br><br>
+      <strong>Contoh:</strong>
+      <ul class="dot-list" style="margin-top:6px;">
+        <li>Seseorang kuliah dan menjadi dokter</li>
+        <li>Berprestasi dan dipilih menjadi ketua OSIS</li>
+        <li>Belajar keras hingga menjadi guru besar/profesor</li>
+        <li>Berbisnis dan menjadi pengusaha sukses</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#D2A8FF;">🏅 3. Assigned Status (Status yang Diberikan Masyarakat)</div>
+    <div class="def-body">
+      Status yang <span class="highlight" style="background:rgba(210,168,255,0.15);color:#D2A8FF;">diberikan</span> kepada seseorang oleh kelompok/masyarakat atas jasa atau penghargaan tertentu, bukan karena kelahiran maupun usaha langsung.<br><br>
+      <strong>Contoh:</strong>
+      <ul class="dot-list" style="margin-top:6px;">
+        <li>Gelar Pahlawan Nasional diberikan pemerintah</li>
+        <li>Seseorang dihormati sebagai "tetua adat"</li>
+        <li>Tokoh masyarakat yang diberi kepercayaan memimpin</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Mnemonik: A-A-A</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">Ascribed · Achieved · Assigned</span>
+      <strong>Ascribed</strong> = lahir → otomatis dapat<br>
+      <strong>Achieved</strong> = usaha → kamu kejar sendiri<br>
+      <strong>Assigned</strong> = pemberian → orang lain yang kasih<br><br>
+      Ingat: "<em>Lahir Usaha Dikasih</em>" → Ascribed, Achieved, Assigned
+    </div>
+  </div>
+
+  <table class="compare-table">
+    <thead>
+      <tr style="background:var(--surface);">
+        <th style="color:var(--muted);">Jenis</th>
+        <th style="color:var(--muted);">Cara Dapat</th>
+        <th style="color:var(--muted);">Contoh Konkret</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:#FF7B72;">Ascribed</strong></td>
+        <td>Kelahiran/keturunan</td>
+        <td>Anak sultan = pangeran</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#3FB950;">Achieved</strong></td>
+        <td>Usaha/prestasi</td>
+        <td>Lulus dokter setelah kuliah</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#D2A8FF;">Assigned</strong></td>
+        <td>Pemberian masyarakat</td>
+        <td>Diangkat jadi tetua adat</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quiz-box" id="quiz7">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Ir. Soekarno mendapat gelar Pahlawan Proklamasi dari pemerintah atas jasa-jasanya. Ini adalah contoh...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz7')">A. Ascribed status</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz7')">B. Achieved status</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz7')">C. Assigned status</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz7')">D. Status set</button>
+    </div>
+    <div class="quiz-feedback" id="quiz7-fb">✅ Benar! Gelar Pahlawan Nasional adalah <strong>assigned status</strong> — diberikan oleh masyarakat/pemerintah kepada seseorang atas jasa luar biasa yang telah dilakukan.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(6)">← Materi 6</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(8)">Materi 8 →</button>
+  </div>
+</div>
+
+<!-- PAGE 8: MOBILITAS SOSIAL -->
+<div class="page" id="page-8">
+  <div class="page-header">
+    <div class="page-num c8">Materi 08</div>
+    <h2 class="page-title">Mobilitas Sosial</h2>
+    <p class="page-desc">Perpindahan posisi seseorang atau kelompok dalam lapisan sosial masyarakat.</p>
+  </div>
+
+  <div class="section-label">Definisi</div>
+  <div class="key-box" style="border-color:var(--accent1);">
+    <div class="key-title c8">Mobilitas Sosial</div>
+    Gerak perpindahan individu atau kelompok dari satu strata/kedudukan sosial ke strata lain. Bisa ke atas (naik) atau ke bawah (turun).
+  </div>
+
+  <div class="section-label">Jenis-Jenis Mobilitas Sosial</div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#79C0FF;">⬆️ Mobilitas Vertikal</div>
+    <div class="def-body">
+      Perpindahan dari satu lapisan ke lapisan lain yang <strong>berbeda tingkatannya</strong>.<br><br>
+      <strong>Naik (Social Climbing):</strong> Dari strata bawah ke atas. Contoh: karyawan biasa → direktur.<br>
+      <strong>Turun (Social Sinking):</strong> Dari strata atas ke bawah. Contoh: pengusaha bangkrut jadi miskin.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#79C0FF;">↔️ Mobilitas Horizontal</div>
+    <div class="def-body">
+      Perpindahan dari satu posisi ke posisi lain yang <strong>setara/sederajat</strong>. Tidak ada perubahan tingkat lapisan.<br><br>
+      <strong>Contoh:</strong> Pindah pekerjaan dari guru SMA ke guru SMK (profesi sama), pindah agama, pindah kota.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#79C0FF;">↕️ Mobilitas Antargenerasi</div>
+    <div class="def-body">
+      Perbedaan kedudukan antara <strong>orang tua dan anak</strong> (antar generasi). Ukuran perubahannya lintas generasi.<br><br>
+      <strong>Contoh:</strong> Ayah seorang petani, anaknya menjadi dokter (naik). Atau: ayah pengusaha sukses, anak jatuh miskin (turun).
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#79C0FF;">⏱️ Mobilitas Intragenerasi</div>
+    <div class="def-body">
+      Perubahan kedudukan dalam <strong>satu generasi yang sama</strong> (sepanjang hidup seseorang).<br><br>
+      <strong>Contoh:</strong> Seseorang mulai karir sebagai OB, naik jadi staff, naik lagi jadi manager.
+    </div>
+  </div>
+
+  <div class="section-label">Faktor Pendorong Mobilitas</div>
+  <div class="tags">
+    <span class="tag c8" style="border-color:rgba(121,192,255,0.3);background:rgba(121,192,255,0.1);">🎓 Pendidikan tinggi</span>
+    <span class="tag c8" style="border-color:rgba(121,192,255,0.3);background:rgba(121,192,255,0.1);">💡 Kemampuan/bakat</span>
+    <span class="tag c8" style="border-color:rgba(121,192,255,0.3);background:rgba(121,192,255,0.1);">🤝 Perkawinan</span>
+    <span class="tag c8" style="border-color:rgba(121,192,255,0.3);background:rgba(121,192,255,0.1);">🏙️ Urbanisasi</span>
+    <span class="tag c8" style="border-color:rgba(121,192,255,0.3);background:rgba(121,192,255,0.1);">⚙️ Industrialisasi</span>
+    <span class="tag c8" style="border-color:rgba(121,192,255,0.3);background:rgba(121,192,255,0.1);">🌐 Globalisasi</span>
+  </div>
+
+  <div class="section-label">Saluran Mobilitas Sosial</div>
+  <div class="pill-grid">
+    <div class="pill-item"><div class="pill-item-title c8">🎓 Pendidikan</div><div class="pill-item-desc">Sekolah dan universitas membuka peluang karir lebih baik</div></div>
+    <div class="pill-item"><div class="pill-item-title c8">⛪ Lembaga Agama</div><div class="pill-item-desc">Menjadi tokoh agama meningkatkan status sosial</div></div>
+    <div class="pill-item"><div class="pill-item-title c8">🏛️ Organisasi Politik</div><div class="pill-item-desc">Aktif berpolitik bisa menaikkan kedudukan sosial</div></div>
+    <div class="pill-item"><div class="pill-item-title c8">💒 Perkawinan</div><div class="pill-item-desc">Menikah dengan orang dari strata berbeda mengubah status</div></div>
+    <div class="pill-item"><div class="pill-item-title c8">🪖 Militer/TNI</div><div class="pill-item-desc">Karir militer bisa meningkatkan status signifikan</div></div>
+    <div class="pill-item"><div class="pill-item-title c8">💼 Ekonomi/Bisnis</div><div class="pill-item-desc">Kewirausahaan sebagai jalur mobilitas ekonomi</div></div>
+  </div>
+
+  <div class="quiz-box" id="quiz8">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Seorang anak nelayan belajar keras, kuliah kedokteran, dan menjadi dokter spesialis. Ini contoh mobilitas...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz8')">A. Mobilitas horizontal</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz8')">B. Mobilitas vertikal turun</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz8')">C. Mobilitas vertikal naik antargenerasi</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz8')">D. Mobilitas intragenerasi menurun</button>
+    </div>
+    <div class="quiz-feedback" id="quiz8-fb">✅ Benar! Ini adalah <strong>mobilitas vertikal naik antargenerasi</strong> — status anaknya (dokter) lebih tinggi dibandingkan orang tuanya (nelayan), dan terjadi lintas generasi.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(7)">← Materi 7</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(9)">Materi 9 →</button>
+  </div>
+</div>
+
+<!-- PAGE 9: DEFINISI GEJALA SOSIAL -->
+<div class="page" id="page-9">
+  <div class="page-header">
+    <div class="page-num c9">Materi 09</div>
+    <h2 class="page-title">Definisi Ragam Gejala Sosial</h2>
+    <p class="page-desc">Pengertian dan karakteristik gejala sosial dalam kehidupan bermasyarakat.</p>
+  </div>
+
+  <div class="section-label">Definisi</div>
+  <div class="def-card">
+    <div class="def-term c9">🔍 Gejala Sosial (Social Phenomena)</div>
+    <div class="def-body">
+      Suatu <span class="highlight" style="background:rgba(227,179,65,0.15);color:#E3B341;">peristiwa, keadaan, atau perubahan</span> dalam kehidupan masyarakat yang dapat diamati dan dikaji secara ilmiah, serta mempengaruhi kehidupan manusia secara bersama-sama.<br><br>
+      Gejala sosial bisa bersifat <strong>positif</strong> (meningkatkan kesejahteraan) maupun <strong>negatif</strong> (masalah sosial).
+    </div>
+  </div>
+
+  <div class="section-label">Karakteristik Gejala Sosial</div>
+  <div class="key-box" style="border-color:var(--accent5);">
+    <ul class="dot-list">
+      <li><strong>Terjadi di masyarakat</strong> – melibatkan banyak individu, bukan hanya perorangan</li>
+      <li><strong>Dapat diamati</strong> – bisa dilihat dan diukur secara ilmiah</li>
+      <li><strong>Berdampak luas</strong> – mempengaruhi kehidupan banyak orang</li>
+      <li><strong>Bersifat relatif</strong> – penilaiannya berbeda di setiap masyarakat/budaya</li>
+      <li><strong>Berkaitan dengan norma</strong> – dinilai berdasarkan nilai dan norma yang berlaku</li>
+      <li><strong>Dapat dikaji</strong> – bisa dianalisis menggunakan metode ilmu sosial</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Penyebab Gejala Sosial</div>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg9 c9">💰</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">Faktor Ekonomi</div>
+        <div class="flow-text">Kemiskinan, pengangguran, ketimpangan pendapatan memicu berbagai masalah sosial.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg9 c9">🧠</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">Faktor Budaya</div>
+        <div class="flow-text">Perubahan nilai dan norma, masuknya budaya asing, lemahnya moralitas.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg9 c9">👥</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">Faktor Psikologis</div>
+        <div class="flow-text">Tekanan mental, depresi, gangguan jiwa mendorong perilaku menyimpang.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg9 c9">🌿</div></div>
+      <div class="flow-content">
+        <div class="flow-title">Faktor Lingkungan</div>
+        <div class="flow-text">Bencana alam, kerusakan lingkungan menciptakan masalah sosial baru.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz9">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Yang membedakan gejala sosial dengan peristiwa biasa adalah...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz9')">A. Hanya dialami satu orang</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz9')">B. Melibatkan banyak orang dan berdampak luas pada masyarakat</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz9')">C. Selalu bersifat negatif</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz9')">D. Tidak dapat diamati secara ilmiah</button>
+    </div>
+    <div class="quiz-feedback" id="quiz9-fb">✅ Benar! Gejala sosial berbeda karena <strong>melibatkan banyak individu, terjadi di masyarakat, dan berdampak luas</strong> — bukan hanya peristiwa yang dialami satu orang saja.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(8)">← Materi 8</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(10)">Materi 10 →</button>
+  </div>
+</div>
+
+<!-- PAGE 10: RAGAM GEJALA SOSIAL -->
+<div class="page" id="page-10">
+  <div class="page-header">
+    <div class="page-num c10">Materi 10</div>
+    <h2 class="page-title">Ragam Gejala Sosial</h2>
+    <p class="page-desc">Berbagai bentuk gejala sosial yang terjadi dalam kehidupan masyarakat.</p>
+  </div>
+
+  <div class="section-label">Gejala Sosial Utama</div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">😢 1. Kemiskinan</div>
+    <div class="def-body">
+      Kondisi di mana seseorang/kelompok tidak mampu memenuhi kebutuhan dasar (sandang, pangan, papan).<br>
+      <strong>Penyebab:</strong> Pengangguran, rendahnya pendidikan, ketidakmerataan pembangunan.<br>
+      <strong>Dampak:</strong> Kriminalitas, gizi buruk, putus sekolah, masalah kesehatan.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">💊 2. Penyalahgunaan NAPZA</div>
+    <div class="def-body">
+      Penggunaan narkotika, alkohol, psikotropika, dan zat adiktif lain di luar tujuan medis.<br>
+      <strong>Penyebab:</strong> Pergaulan bebas, tekanan sosial, kurangnya perhatian keluarga, rasa ingin tahu.<br>
+      <strong>Dampak:</strong> Kerusakan fisik-mental, kriminalitas, hancurnya masa depan.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">⚔️ 3. Konflik Sosial</div>
+    <div class="def-body">
+      Pertentangan antara individu/kelompok dalam masyarakat.<br>
+      <strong>Bentuk:</strong> Konflik kelas, konflik antar etnis, konflik agama, konflik politik.<br>
+      <strong>Teori Konflik (Dahrendorf):</strong> Konflik dipicu oleh ketimpangan distribusi kekuasaan dan sumber daya.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">🔪 4. Kejahatan / Kriminalitas</div>
+    <div class="def-body">
+      Perilaku yang melanggar hukum dan norma sosial. Termasuk pencurian, penipuan, kekerasan, korupsi.<br>
+      <strong>Penyebab:</strong> Kemiskinan, pengangguran, disorganisasi keluarga, lemahnya penegakan hukum.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">🏙️ 5. Urbanisasi Masif</div>
+    <div class="def-body">
+      Perpindahan penduduk besar-besaran dari desa ke kota melebihi daya tampung kota.<br>
+      <strong>Dampak negatif:</strong> Slum area (pemukiman kumuh), pengangguran kota, tekanan infrastruktur.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">👶 6. Kenakalan Remaja</div>
+    <div class="def-body">
+      Perilaku menyimpang remaja yang melanggar norma sosial dan hukum.<br>
+      <strong>Bentuk:</strong> Tawuran, vandalisme, pergaulan bebas, bolos sekolah.<br>
+      <strong>Penyebab:</strong> Disharmoni keluarga, pengaruh teman sebaya, lemahnya kontrol sosial.
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#56D364;">💔 7. Disorganisasi Keluarga</div>
+    <div class="def-body">
+      Perpecahan dalam keluarga yang mengganggu fungsi keluarga.<br>
+      <strong>Bentuk:</strong> Perceraian tinggi, kekerasan dalam rumah tangga (KDRT), penelantaran anak.
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Ingat Ragam Gejala dengan: KP-KK-UKD</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">K · P · K · K · U · K · D</span>
+      <strong>K</strong>emiskinan · <strong>P</strong>enyalahgunaan NAPZA · <strong>K</strong>onflik · <strong>K</strong>riminalitas · <strong>U</strong>rbanisasi · <strong>K</strong>enakalan remaja · <strong>D</strong>isorganisasi keluarga
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz10">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Banyaknya kasus perceraian dan kekerasan dalam rumah tangga merupakan gejala sosial berupa...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz10')">A. Kemiskinan</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz10')">B. Konflik sosial</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz10')">C. Urbanisasi</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz10')">D. Disorganisasi keluarga</button>
+    </div>
+    <div class="quiz-feedback" id="quiz10-fb">✅ Benar! Perceraian tinggi dan KDRT adalah wujud <strong>disorganisasi keluarga</strong> — kondisi di mana ikatan dan fungsi keluarga mengalami perpecahan.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(9)">← Materi 9</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(11)">Materi 11 →</button>
+  </div>
+</div>
+
+<!-- PAGE 11: FUNGSI LEMBAGA KELUARGA -->
+<div class="page" id="page-11">
+  <div class="page-header">
+    <div class="page-num c11">Materi 11</div>
+    <h2 class="page-title">Fungsi Lembaga Keluarga</h2>
+    <p class="page-desc">Peran dan fungsi keluarga sebagai lembaga sosial terkecil namun paling fundamental.</p>
+  </div>
+
+  <div class="section-label">Definisi Lembaga Keluarga</div>
+  <div class="key-box" style="border-color:var(--accent4);">
+    <div class="key-title c11">Lembaga Keluarga</div>
+    Unit sosial terkecil dalam masyarakat yang terdiri dari individu-individu yang terikat oleh <strong>hubungan darah, perkawinan, atau adopsi</strong>. Keluarga adalah lembaga sosial pertama dan utama yang membentuk kepribadian individu.
+  </div>
+
+  <div class="section-label">8 Fungsi Utama Lembaga Keluarga</div>
+
+  <div class="flow">
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">👶</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">1. Fungsi Reproduksi</div>
+        <div class="flow-text">Melanjutkan keturunan dan mempertahankan kelangsungan hidup manusia. Keluarga adalah tempat sah untuk melahirkan generasi baru.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">🎓</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">2. Fungsi Sosialisasi</div>
+        <div class="flow-text">Keluarga adalah agen sosialisasi primer — tempat pertama anak belajar nilai, norma, bahasa, dan perilaku yang diterima masyarakat.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">❤️</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">3. Fungsi Afeksi (Kasih Sayang)</div>
+        <div class="flow-text">Memberikan rasa cinta, kasih sayang, dan dukungan emosional. Kebutuhan psikologis dasar manusia dipenuhi dalam keluarga.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">💰</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">4. Fungsi Ekonomi</div>
+        <div class="flow-text">Memenuhi kebutuhan materi anggota keluarga. Orang tua bekerja untuk menghidupi keluarga, dan keluarga bisa menjadi unit produksi.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">🛡️</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">5. Fungsi Perlindungan</div>
+        <div class="flow-text">Melindungi anggota dari ancaman fisik, psikis, dan sosial. Keluarga menjadi tempat aman dan nyaman.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">📍</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">6. Fungsi Penentuan Status</div>
+        <div class="flow-text">Anak mewarisi status sosial dari keluarga (ascribed status). Nama keluarga, kelas sosial, dan kedudukan diwariskan.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">🕌</div><div class="flow-connector"></div></div>
+      <div class="flow-content">
+        <div class="flow-title">7. Fungsi Agama</div>
+        <div class="flow-text">Keluarga menanamkan nilai-nilai keagamaan dan kepercayaan sejak dini. Orang tua adalah guru agama pertama bagi anak.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-line"><div class="flow-circle bg11 c11">🎭</div></div>
+      <div class="flow-content">
+        <div class="flow-title">8. Fungsi Rekreasi</div>
+        <div class="flow-text">Keluarga menjadi tempat hiburan, relaksasi, dan memulihkan energi dari tekanan hidup. Momen bersama keluarga adalah rekreasi.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Mnemonik: RSAEPPAR</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">R · S · A · E · P · P · A · R</span>
+      <strong>R</strong>eproduksi · <strong>S</strong>osialisasi · <strong>A</strong>feksi · <strong>E</strong>konomi · <strong>P</strong>erlindungan · <strong>P</strong>enentuan status · <strong>A</strong>gama · <strong>R</strong>ekreasi<br><br>
+      Ingat: "<em>Rumah Selalu Aman dan Ekonomis, Penuh Pelukan, Aman, Riang</em>"
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz11">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">Orang tua mengajarkan anak untuk berdoa, sholat, dan berakhlak baik. Ini menjalankan fungsi keluarga berupa...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz11')">A. Fungsi sosialisasi</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz11')">B. Fungsi afeksi</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz11')">C. Fungsi agama</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz11')">D. Fungsi perlindungan</button>
+    </div>
+    <div class="quiz-feedback" id="quiz11-fb">✅ Benar! Mengajarkan nilai keagamaan kepada anak adalah <strong>fungsi agama</strong> keluarga — keluarga sebagai tempat pertama anak mengenal Tuhan dan ajaran agama.</div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(10)">← Materi 10</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠</button>
+    <button class="btn btn-primary" onclick="goTo(12)">Materi 12 →</button>
+  </div>
+</div>
+
+<!-- PAGE 12: UPAYA MENGATASI -->
+<div class="page" id="page-12">
+  <div class="page-header">
+    <div class="page-num c12">Materi 12</div>
+    <h2 class="page-title">Upaya Mengatasi Masalah Ragam Gejala Sosial</h2>
+    <p class="page-desc">Strategi dan cara-cara untuk mengatasi berbagai masalah sosial dalam masyarakat.</p>
+  </div>
+
+  <div class="section-label">3 Pendekatan Utama</div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#FF9A72;">🛡️ 1. Upaya Preventif (Pencegahan)</div>
+    <div class="def-body">
+      Tindakan yang dilakukan <span class="highlight" style="background:rgba(255,154,114,0.15);color:#FF9A72;">sebelum masalah terjadi</span> untuk mencegah munculnya gejala sosial negatif.<br><br>
+      <strong>Contoh:</strong>
+      <ul class="dot-list" style="margin-top:6px;">
+        <li>Penyuluhan anti narkoba di sekolah</li>
+        <li>Pendidikan karakter sejak dini</li>
+        <li>Program KB untuk mengendalikan pertumbuhan penduduk</li>
+        <li>Sosialisasi hukum kepada masyarakat</li>
+        <li>Pembinaan generasi muda melalui organisasi</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#FF9A72;">⚖️ 2. Upaya Represif (Penindakan)</div>
+    <div class="def-body">
+      Tindakan yang dilakukan <span class="highlight" style="background:rgba(255,154,114,0.15);color:#FF9A72;">saat masalah sedang terjadi</span> untuk menghentikan dan mengatasi gejala sosial.<br><br>
+      <strong>Contoh:</strong>
+      <ul class="dot-list" style="margin-top:6px;">
+        <li>Penegakan hukum dan penangkapan pelaku kejahatan</li>
+        <li>Razia narkoba oleh BNN/kepolisian</li>
+        <li>Penertiban kawasan kumuh oleh pemerintah</li>
+        <li>Pembubaran kerusuhan/konflik oleh aparat</li>
+        <li>Pemberian sanksi tegas kepada pelanggar</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="def-card">
+    <div class="def-term" style="color:#FF9A72;">💊 3. Upaya Kuratif/Rehabilitasi (Pemulihan)</div>
+    <div class="def-body">
+      Tindakan yang dilakukan <span class="highlight" style="background:rgba(255,154,114,0.15);color:#FF9A72;">setelah masalah terjadi</span> untuk memulihkan dan merehabilitasi korban/pelaku.<br><br>
+      <strong>Contoh:</strong>
+      <ul class="dot-list" style="margin-top:6px;">
+        <li>Rehabilitasi pecandu narkoba di panti rehabilitasi</li>
+        <li>Pemberdayaan ekonomi untuk mengentaskan kemiskinan</li>
+        <li>Konseling psikologis bagi korban KDRT</li>
+        <li>Program pembinaan narapidana di lapas</li>
+        <li>Reintegrasi sosial mantan narapidana</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-label">Upaya Spesifik Per Masalah</div>
+
+  <table class="compare-table">
+    <thead>
+      <tr style="background:var(--surface);">
+        <th style="color:var(--muted);">Masalah Sosial</th>
+        <th style="color:var(--muted);">Upaya Penanganan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:#FF9A72;">Kemiskinan</strong></td>
+        <td>Program bantuan sosial (BLT, BPNT), beasiswa pendidikan, pemberdayaan UMKM, pelatihan keterampilan kerja</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#FF9A72;">Narkoba</strong></td>
+        <td>Penyuluhan P4GN, rehabilitasi BNN, penegakan hukum, pendampingan keluarga</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#FF9A72;">Kejahatan</strong></td>
+        <td>Patroli keamanan, penegakan hukum, rehabilitasi di lapas, pembinaan moral</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#FF9A72;">Kenakalan Remaja</strong></td>
+        <td>Bimbingan konseling, kegiatan positif, penguatan fungsi keluarga, pendidikan karakter</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#FF9A72;">Konflik Sosial</strong></td>
+        <td>Dialog antar pihak, mediasi, penegakan hukum, pendidikan toleransi, rekonsiliasi</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mnemonic">
+    <div class="mnemonic-title">💡 Mnemonik: P-R-K</div>
+    <div class="mnemonic-text">
+      <span class="mnemonic-key">P · R · K</span>
+      <strong>P</strong>reventif = Sebelum (Cegah)<br>
+      <strong>R</strong>epresif = Saat terjadi (Tindak)<br>
+      <strong>K</strong>uratif = Setelah (Pulihkan)<br><br>
+      Ingat urutan waktu: <em>"Cegah → Tindak → Pulihkan"</em>
+    </div>
+  </div>
+
+  <div class="quiz-box" id="quiz12">
+    <div class="quiz-label">🎯 Uji Pemahaman</div>
+    <div class="quiz-q">BNN melakukan rehabilitasi kepada pecandu narkoba agar bisa kembali ke masyarakat. Ini termasuk upaya...</div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'quiz12')">A. Preventif</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz12')">B. Represif</button>
+      <button class="quiz-opt" onclick="answer(this,true,'quiz12')">C. Kuratif/Rehabilitatif</button>
+      <button class="quiz-opt" onclick="answer(this,false,'quiz12')">D. Persuasif</button>
+    </div>
+    <div class="quiz-feedback" id="quiz12-fb">✅ Benar! Rehabilitasi adalah upaya <strong>kuratif</strong> — dilakukan setelah masalah terjadi, bertujuan memulihkan kondisi korban/pelaku agar bisa kembali berfungsi normal di masyarakat.</div>
+  </div>
+
+  <div style="background:rgba(88,166,255,0.06);border:1px solid rgba(88,166,255,0.2);border-radius:14px;padding:20px;margin-top:24px;text-align:center;">
+    <div style="font-size:28px;margin-bottom:8px;">🎉</div>
+    <div style="font-weight:700;font-size:16px;margin-bottom:6px;color:var(--accent1);">Selesai! Semua 12 Materi Sudah Dipelajari</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;">Kamu sudah menyelesaikan seluruh kisi-kisi ASAT Sosiologi Kelas X. Semangat belajar!</div>
+    <button class="btn btn-primary" onclick="goTo(0)" style="font-size:14px;padding:12px 28px;">🏠 Kembali ke Daftar Materi</button>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn" onclick="goTo(11)">← Materi 11</button>
+    <button class="btn btn-home" onclick="goTo(0)">🏠 Home</button>
+  </div>
+</div>
+
+<script>
+function goTo(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
+  document.getElementById('page-' + n).classList.add('active');
+  document.querySelectorAll('.nav-dot')[n].classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function answer(btn, correct, quizId) {
+  const quiz = document.getElementById(quizId);
+  const opts = quiz.querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.disabled = true);
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) {
+    opts.forEach(o => {
+      if (o.onclick.toString().includes('true')) o.classList.add('correct');
+    });
+  }
+  const fb = document.getElementById(quizId + '-fb');
+  fb.style.display = 'block';
+}
+</script>
+</body>
+</html>
